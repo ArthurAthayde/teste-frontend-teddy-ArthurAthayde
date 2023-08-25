@@ -45,4 +45,23 @@ export class DashboardComponent {
       )
       .catch((error) => console.error(error));
   }
+
+  putPartner() {
+    const partner: IPartner = {
+      id: '10',
+      name: 'Novo nome',
+      description: 'Para que serve essa parceria',
+      repositoryGit: 'Link do repositório do git',
+      urlDoc: 'Link da documentação do parceiro',
+      clients: ['Banco da Galera', 'Alegria Bankers'],
+      projects: ['Coban', 'Teddy360'],
+    };
+
+    this.partnersService
+      .putPartnerInfo(partner)
+      .then((partners) =>
+        console.log(`${partners?.name} has been updated successfully`)
+      )
+      .catch((error) => console.error(error));
+  }
 }

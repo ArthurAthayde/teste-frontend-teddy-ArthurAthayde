@@ -25,4 +25,12 @@ export class PartnersService {
 
     return this.httpClient.post<IPartner>(`${apiUrl}`, partner).toPromise();
   }
+
+  putPartnerInfo(partner: IPartner) {
+    const apiUrl = `${environment.apiBaseUrl}`;
+
+    return this.httpClient
+      .put<IPartner>(`${apiUrl}/${partner.id}`, partner)
+      .toPromise();
+  }
 }
