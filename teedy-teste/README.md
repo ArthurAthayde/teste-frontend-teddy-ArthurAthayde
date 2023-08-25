@@ -66,15 +66,15 @@ Isso iniciará o servidor de desenvolvimento e você poderá acessar o aplicativ
 - leitura da doc para iniciar projeto e criação de components = 20min
 - estudo e utilização da lib material = 40min
 
-[x]Criação do MVP = 4h
+[x] Criação do MVP = 4h
 
-- [x]leitura do pdf da doc até conseguir criar um desenho do projeto = 20min
-- [x]estudo, utilização da lib e debug nos components = 40min
-- [x]criação do crud e components completo com promisse (somente service e manipulação da API no console, sem lógica de acessar elemento) = 1h
+- [x] leitura do pdf da doc até conseguir criar um desenho do projeto = 20min
+- [x] estudo, utilização da lib e debug nos components = 40min
+- [x] criação do crud e components completo com promisse (somente service e manipulação da API no console, sem lógica de acessar elemento) = 1h
 - [x] transição para Observable = 1h
 - [ ] paginação = 1h30 (Fiz relativamente rápido a implementação do html e component, mas fiquei um tempo
       trabalhando na lógica que não funcionou ainda)
-- [] retoques finais de CSS = 45min
+- [ ] retoques finais de CSS = 45min
 
 ### Tempo estimado total: 10 horas.
 
