@@ -2,8 +2,10 @@
   <div>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>Cadastrar parceiro</button>
-      <button (click)="getAllPartners()" mat-menu-item>
+      <button (click)="createNewPartner()" mat-menu-item>
+        Cadastrar parceiro
+      </button>
+      <button (click)="loadPartners()" mat-menu-item>
         Listar todos os parceiros
       </button>
       <button mat-menu-item>Sobre a aplicação</button>
@@ -16,14 +18,21 @@
 
   <table>
     <tbody>
-      <tr *ngFor="let partner of partners">
+      <tr *ngFor="let partner of partners$ | async">
         <td>{{ partner.name }}</td>
         <td>{{ partner.description }}</td>
         <td>{{ partner.repositoryGit }}</td>
         <td>{{ partner.urlDoc }}</td>
         <td>{{ partner.clients }}</td>
         <td>{{ partner.projects }}</td>
+        <mat-icon (click)="putPartner()">edit</mat-icon>
       </tr>
     </tbody>
   </table>
+  <mat-paginator
+    [length]="totalItems"
+    [pageSize]="itemsPerPage"
+    [pageIndex]="currentPage"
+    (page)="onPageChange($event)"
+  ></mat-paginator>
 </body>
