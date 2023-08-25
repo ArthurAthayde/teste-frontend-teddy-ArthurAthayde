@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     HeaderComponent,
     FooterComponent,
     RegisterModalComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

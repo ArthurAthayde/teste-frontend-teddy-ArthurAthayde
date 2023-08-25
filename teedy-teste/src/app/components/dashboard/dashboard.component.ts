@@ -45,6 +45,9 @@ export class DashboardComponent {
     this.router.navigate(['']);
   }
 
+  about() {
+    this.router.navigate(['about']);
+  }
   loadPartners() {
     this.partners$ = this.partnersService.getAll(
       this.currentPage,
