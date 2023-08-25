@@ -1,10 +1,10 @@
 export interface IPartner {
-  createdAt: Date;
+  createdAt?: Date;
   name: string;
   description: string;
   repositoryGit: string;
   urlDoc: string;
   clients: Array<string | number>;
-  projects: string[];
-  id: string;
+  projects: Array<string | number>;
+  id?: string;
 }

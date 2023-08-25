@@ -13,4 +13,16 @@ export class PartnersService {
 
     return this.httpClient.get<IPartner[]>(`${apiUrl}`).toPromise();
   }
+
+  getById(id: string) {
+    const apiUrl = `${environment.apiBaseUrl}`;
+
+    return this.httpClient.get<IPartner>(`${apiUrl}/${id}`).toPromise();
+  }
+
+  createPartner(partner: IPartner) {
+    const apiUrl = `${environment.apiBaseUrl}`;
+
+    return this.httpClient.post<IPartner>(`${apiUrl}`, partner).toPromise();
+  }
 }
