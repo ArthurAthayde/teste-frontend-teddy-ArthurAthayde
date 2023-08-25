@@ -64,4 +64,13 @@ export class DashboardComponent {
       )
       .catch((error) => console.error(error));
   }
+
+  deletePartner() {
+    this.partnersService
+      .deletePartner('91')
+      .then((partners) =>
+        console.log(`Partner has been deleted successfully`, partners)
+      )
+      .catch((error) => console.error(error));
+  }
 }

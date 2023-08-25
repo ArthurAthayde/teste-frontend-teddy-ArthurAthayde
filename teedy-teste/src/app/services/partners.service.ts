@@ -33,4 +33,10 @@ export class PartnersService {
       .put<IPartner>(`${apiUrl}/${partner.id}`, partner)
       .toPromise();
   }
+
+  deletePartner(id: string) {
+    const apiUrl = `${environment.apiBaseUrl}`;
+
+    return this.httpClient.delete(`${apiUrl}/${id}`).toPromise();
+  }
 }
