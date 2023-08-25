@@ -1,0 +1,36 @@
+<body>
+  <div>
+    <nav>
+      <h1>Bem vindo</h1>
+      <section>
+        <button mat-raised-button (click)="toggleRegisterModal()">
+          Registrar
+        </button>
+      </section>
+    </nav>
+
+    <div class="home__container">
+      <section class="login__container">
+        <h2>Login</h2>
+        <form class="form__container" action="">
+          <mat-form-field class="email">
+            <mat-label>Email</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <mat-form-field class="password">
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput />
+          </mat-form-field>
+
+          <button mat-raised-button (click)="navigateToDashboard()">
+            Login
+          </button>
+        </form>
+      </section>
+    </div>
+    <div *ngIf="isRegisterModalOpen" class="modal__overlay">
+      <app-register-modal></app-register-modal>
+    </div>
+  </div>
+</body>

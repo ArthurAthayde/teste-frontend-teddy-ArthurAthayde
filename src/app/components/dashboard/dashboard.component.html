@@ -1,0 +1,38 @@
+<body>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button (click)="createNewPartner()" mat-menu-item>
+        Cadastrar parceiro
+      </button>
+      <button (click)="loadPartners()" mat-menu-item>
+        Listar todos os parceiros
+      </button>
+      <button mat-menu-item (click)="about()">Sobre a aplicação</button>
+      <button mat-menu-item (click)="logout()">Sair</button>
+    </mat-menu>
+  </div>
+
+  <table>
+    <tbody>
+      <tr *ngFor="let partner of partners$ | async">
+        <td>{{ partner.name }}</td>
+        <td>{{ partner.description }}</td>
+        <td>{{ partner.repositoryGit }}</td>
+        <td>{{ partner.urlDoc }}</td>
+        <td>{{ partner.clients }}</td>
+        <td>{{ partner.projects }}</td>
+        <mat-icon (click)="putPartner()">edit</mat-icon>
+        <td>
+          <mat-icon (click)="deletePartner(partner)">delete</mat-icon>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <mat-paginator
+    [length]="totalItems"
+    [pageSize]="itemsPerPage"
+    [pageIndex]="currentPage"
+    (page)="onPageChange($event)"
+  ></mat-paginator>
+</body>

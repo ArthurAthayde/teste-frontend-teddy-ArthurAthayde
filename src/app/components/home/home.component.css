@@ -1,0 +1,43 @@
+body {
+  height: 87vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.home__container {
+  padding: 20px;
+  position: relative;
+}
+
+.login__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 380px;
+  width: 38%;
+  max-width: 300px;
+  padding: 20px;
+
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+}
+
+.form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+}
+
+.password,
+.email,
+.submit__btn {
+  width: 280px;
+}
