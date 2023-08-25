@@ -1,6 +1,9 @@
 # Teedy Teste
 
-Este é um projeto Angular para testes e demonstrações.
+Este é um projeto Angular tem como objetivo cadastrar
+informações parceiros que utilizam nossas aplicações em uma API REST, além
+de poder fazer a atualização dos dados e deleção do parceiro, caso
+necessário.
 
 ## Instalação e Execução
 
