@@ -6,7 +6,7 @@ import { IPartner } from 'src/app/interfaces/IPartners';
 import { CommonModule } from '@angular/common';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PageEvent } from '@angular/material/paginator';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of, tap } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
 
@@ -25,6 +25,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent {
   partners$ = new Observable<IPartner[]>();
+  partnersLength$ = new BehaviorSubject<number>(0);
   totalItems: number = 100;
   itemsPerPage: number = 10;
   currentPage: number = 0;

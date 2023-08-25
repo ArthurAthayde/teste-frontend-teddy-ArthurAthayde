@@ -30,7 +30,7 @@
     </tbody>
   </table>
   <mat-paginator
-    [length]="totalItems"
+    [length]="partnersLength$ | async"
     [pageSize]="itemsPerPage"
     [pageIndex]="currentPage"
     (page)="onPageChange($event)"
