@@ -8,6 +8,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -35,7 +36,14 @@ export class DashboardComponent {
   partnerRepositoryGit = '';
   partnerUrlDoc = '';
 
-  constructor(private partnersService: PartnersService) {}
+  constructor(
+    private router: Router,
+    private partnersService: PartnersService
+  ) {}
+
+  logout() {
+    this.router.navigate(['']);
+  }
 
   loadPartners() {
     this.partners$ = this.partnersService.getAll(
