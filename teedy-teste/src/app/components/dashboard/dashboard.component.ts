@@ -68,18 +68,17 @@ export class DashboardComponent {
   putPartner() {
     const partner: IPartner = {
       id: '10',
-      name: 'Novo nome',
+      name: 'Nome do parceiro',
       description: 'Para que serve essa parceria',
       repositoryGit: 'Link do repositório do git',
       urlDoc: 'Link da documentação do parceiro',
-      clients: [],
-      projects: [],
+      clients: ['Banco da Galera', 'Alegria Bankers'],
+      projects: ['Coban', 'Teddy360'],
     };
-
-    this.id = partner.id as string;
-    this.partnerName = partner.name;
-    this.partnerRepositoryGit = partner.repositoryGit;
-    this.partnerUrlDoc = partner.urlDoc;
+    this.partnersService.updatePartner(partner).subscribe(() => {
+      console.log('Parceiro atualizado:', partner);
+      this.loadPartners();
+    });
   }
 
   // getAllPartners() {

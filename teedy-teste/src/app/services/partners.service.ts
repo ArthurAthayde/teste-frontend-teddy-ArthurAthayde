@@ -26,25 +26,13 @@ export class PartnersService {
   }
 
   updatePartner(partner: IPartner) {
-    return this.httpClient.put<IPartner>(this.apiUrl, partner);
+    return this.httpClient.put<IPartner>(
+      `${this.apiUrl}/${partner.id}`,
+      partner
+    );
   }
 
-  // getById(id: string) {
-  //   const apiUrl = `${environment.apiBaseUrl}`;
-  //   return this.httpClient.get<IPartner>(`${apiUrl}/${id}`).toPromise();
-  // }
-  // createPartner(partner: IPartner) {
-  //   const apiUrl = `${environment.apiBaseUrl}`;
-  //   return this.httpClient.post<IPartner>(`${apiUrl}`, partner).toPromise();
-  // }
-  // putPartnerInfo(partner: IPartner) {
-  //   const apiUrl = `${environment.apiBaseUrl}`;
-  //   return this.httpClient
-  //     .put<IPartner>(`${apiUrl}/${partner.id}`, partner)
-  //     .toPromise();
-  // }
-  // deletePartner(id: string) {
-  //   const apiUrl = `${environment.apiBaseUrl}`;
-  //   return this.httpClient.delete(`${apiUrl}/${id}`).toPromise();
-  // }
+  deletePartner(partner: IPartner) {
+    return this.httpClient.delete<void>(`${this.apiUrl}/${partner.id}`);
+  }
 }
