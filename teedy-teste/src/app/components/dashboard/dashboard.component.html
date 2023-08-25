@@ -2,19 +2,28 @@
   <div>
     <button mat-button [matMenuTriggerFor]="menu">Menu</button>
     <mat-menu #menu="matMenu">
-      <button (click)="createNewPartner()" mat-menu-item>
-        Cadastrar parceiro
-      </button>
+      <button mat-menu-item>Cadastrar parceiro</button>
       <button (click)="getAllPartners()" mat-menu-item>
         Listar todos os parceiros
       </button>
       <button mat-menu-item>Sobre a aplicação</button>
       <button mat-menu-item>Sair</button>
-      <button (click)="getPartnerById()" mat-menu-item>
-        Teste obter por Id
-      </button>
-      <button (click)="putPartner()" mat-menu-item>Teste atualizar</button>
-      <button (click)="deletePartner()" mat-menu-item>Teste deletar</button>
+      <button mat-menu-item>Teste obter por Id</button>
+      <button mat-menu-item>Teste atualizar</button>
+      <button mat-menu-item>Teste deletar</button>
     </mat-menu>
   </div>
+
+  <table>
+    <tbody>
+      <tr *ngFor="let partner of partners">
+        <td>{{ partner.name }}</td>
+        <td>{{ partner.description }}</td>
+        <td>{{ partner.repositoryGit }}</td>
+        <td>{{ partner.urlDoc }}</td>
+        <td>{{ partner.clients }}</td>
+        <td>{{ partner.projects }}</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
