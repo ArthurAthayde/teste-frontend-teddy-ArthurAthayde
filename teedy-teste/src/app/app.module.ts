@@ -13,9 +13,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
+import { RegisterModalComponent } from './components/register-modal/register-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    RegisterModalComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +37,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatButtonModule,
     MatTooltipModule,
     MatIconModule,
+    MatDialogModule,
+    DashboardComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

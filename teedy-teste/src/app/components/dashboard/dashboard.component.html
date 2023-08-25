@@ -1,0 +1,13 @@
+<body>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Cadastrar parceiro</button>
+      <button (click)="getAllPartners()" mat-menu-item>
+        Listar todos os parceiros
+      </button>
+      <button mat-menu-item>Sobre a aplicação</button>
+      <button mat-menu-item>Sair</button>
+    </mat-menu>
+  </div>
+</body>
