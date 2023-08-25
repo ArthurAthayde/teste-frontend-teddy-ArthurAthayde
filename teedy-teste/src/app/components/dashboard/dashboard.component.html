@@ -26,6 +26,9 @@
         <td>{{ partner.clients }}</td>
         <td>{{ partner.projects }}</td>
         <mat-icon (click)="putPartner()">edit</mat-icon>
+        <td>
+          <mat-icon (click)="deletePartner(partner)">delete</mat-icon>
+        </td>
       </tr>
     </tbody>
   </table>
