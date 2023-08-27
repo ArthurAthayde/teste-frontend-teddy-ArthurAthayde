@@ -11,14 +11,8 @@ export class PartnersService {
   private apiUrl = environment.apiBaseUrl;
   constructor(private httpClient: HttpClient) {}
 
-  getAll(page: number, itemsPerPage: number): Observable<IPartner[]> {
-    const startIndex = page * itemsPerPage;
-    return this.httpClient.get<IPartner[]>(this.apiUrl, {
-      params: {
-        _start: startIndex.toString(),
-        _limit: itemsPerPage.toString(),
-      },
-    });
+  getAll(): Observable<IPartner[]> {
+    return this.httpClient.get<IPartner[]>(this.apiUrl);
   }
 
   createPartner(partner: IPartner) {

@@ -26,9 +26,9 @@ import { Router } from '@angular/router';
 export class DashboardComponent {
   partners$ = new Observable<IPartner[]>();
   partnersLength$ = new BehaviorSubject<number>(0);
-  totalItems: number = 100;
-  itemsPerPage: number = 10;
-  currentPage: number = 0;
+  public pageSlice = this.partners$.subscribe((partners) => {
+    partners.slice(0, 10);
+  });
 
   //formInfos
   id = '';
@@ -51,15 +51,20 @@ export class DashboardComponent {
   }
 
   loadPartners() {
-    this.partners$ = this.partnersService.getAll(
-      this.currentPage,
-      this.itemsPerPage
-    );
+    this.partners$ = this.partnersService.getAll();
   }
 
-  onPageChange(event: PageEvent): void {
-    this.currentPage = event.pageIndex;
-    this.loadPartners();
+  OnPageChange(event: PageEvent) {
+    const startIndex = event.pageIndex * event.pageSize;
+    let endIndex = startIndex + event.pageSize;
+    this.partners$.subscribe((partners) => {
+      if (endIndex > partners.length) {
+        endIndex = partners.length;
+      }
+      this.pageSlice = this.partners$.subscribe((partners) => {
+        partners.slice(startIndex, endIndex);
+      });
+    });
   }
 
   createNewPartner() {

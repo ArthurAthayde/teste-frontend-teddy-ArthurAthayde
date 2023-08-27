@@ -8,3 +8,7 @@ td {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+table {
+  padding: 30px;
+}
